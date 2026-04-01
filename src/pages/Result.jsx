@@ -58,7 +58,7 @@ const Result = () => {
         </div>
 
         <div className="p-8 pt-7">
-          <h2 className="text-2xl font-black text-gray-900 text-center mb-4 break-keep leading-tight">
+          <h2 className="text-2xl font-medium-aggro text-gray-700 text-center mb-4 break-keep leading-tight">
             "{resultData.title}"
           </h2>
 

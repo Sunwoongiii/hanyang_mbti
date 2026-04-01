@@ -2,20 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 폰트 설정 (Pretendard) */
+/* 1. 어그로체 Bold 로컬 폰트 등록 */
+/* 반드시 public/fonts/SBAggroB.ttf 파일이 있어야 합니다. */
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('/fonts/SBAggroB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SBAggroM';
+  src: url('/fonts/SBAggroM.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. 기본 폰트 설정 (Pretendard) */
 :root {
   font-family: "Pretendard", sans-serif;
 }
 
-/* 브라우저 기본 마진 제거 및 전체 배경 설정 */
+/* 3. 브라우저 기본 설정 및 배경 */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #f1f5f9; /* slate-100 배경색 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 스크롤바 숨기기 (선택사항 - 깔끔한 앱 느낌) */
+/* 4. 스크롤바 숨기기 (모바일 앱 느낌) */
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* 5. 커스텀 유틸리티 클래스 (매우 굵은 어그로체) */
+@layer utilities {
+  .font-thick-aggro {
+    font-family: 'SBAggroB', sans-serif;
+    /* 굵기를 더 강조하기 위해 0.8px의 외곽선을 추가 */
+    -webkit-text-stroke: 0.8px currentColor;
+    /* 선 때문에 글자가 뭉쳐 보이지 않도록 자간 미세 조정 */
+    letter-spacing: -0.03em;
+  }
+
+  .font-medium-aggro{
+    font-family: 'SBAggroM', sans-serif;
+    -webkit-text-stroke: 0.3px currentColor;
+    letter-spacing: -0.02em;
+  }
 }

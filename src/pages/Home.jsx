@@ -8,13 +8,16 @@ const Home = () => {
     <div className="flex flex-col items-center justify-center h-full p-6 text-center bg-white font-sans">
       
       {/* 1. 상단 학생회 명칭 */}
-      <h2 className="text-sm font-bold text-gray-400 mb-3 tracking-tight">
+      <h2 className="text-sm font-bold text-gray-400 mb-5 tracking-tight">
         한양대학교 제49대 공과대학 학생회 비상대책위원회
       </h2>
       
       {/* 2. 메인 타이틀 */}
-      <h1 className="text-6xl font-extrabold text-blue-600 mb-5 break-keep leading-tight tracking-tighter">
-        공대 시험기간<br />MBTI 유형
+      <h1 className="text-5xl font-thick-aggro text-blue-600  break-keep leading-tight tracking-tighter">
+        공대 시험기간
+      </h1>
+      <h1 className="text-6xl font-thick-aggro text-blue-600 mb-5 break-keep leading-tight tracking-tighter">
+        MBTI 유형
       </h1>
 
       {/* ✅ 3. 핵심 변경: 공과대학 마스코트 이미지 배치 */}
