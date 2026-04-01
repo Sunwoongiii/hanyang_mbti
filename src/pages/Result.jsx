@@ -75,6 +75,14 @@ const Result = () => {
           <p className="text-gray-700 leading-relaxed text-[0.95rem] text-center break-keep font-medium  p-5 bg-slate-50 rounded-2xl border border-slate-100">
             {resultData.description}
           </p>
+          <div className="mt-6 mb-2 flex flex-col items-center animate-bounce-slow">
+            <p className="text-[0.85rem] font-black text-gray-800 mb-1">
+              📸지금 이 화면을 캡처해서
+            </p>
+            <p className="text-[0.85rem] font-extrabold text-gray-800">
+              <span className="text-blue-600">@hyu_tech</span> 태그하고 스토리에 올려보세요!
+            </p>
+          </div>
         </div>
       </div>
 
