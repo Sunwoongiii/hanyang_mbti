@@ -67,11 +67,10 @@
 
 ```bash
 # 1. 저장소 클론
-$ git clone [https://github.com/](https://github.com/)
-https://github.com/Sunwoongiii/hanyang_mbti
+$ git clone https://github.com/Sunwoongiii/hanyang_mbti.git
 
 # 2. 프로젝트 폴더로 이동
-$ cd [저장소이름]
+$ cd hanyang_mbti
 
 # 3. 패키지 설치
 $ npm install
