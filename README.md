@@ -88,6 +88,6 @@ $ npm run dev
  ┣ 📜 main.jsx     # 리액트 앱 진입점
  ┗ 📜 App.jsx      # 라우팅 설정
 
- <div align="center">
+<div align="center">
 <i>공대생들의 성공적인 A+을 기원합니다! 💯</i>
 </div>
