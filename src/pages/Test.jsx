@@ -202,9 +202,10 @@ const Test = () => {
 
   const progressPercent = ((currentIndex + 1) / shuffledQuestions.length) * 100;
 
+  // ✅ 1. 버튼 크기 및 여백 축소 (py-5 -> py-3.5 / mb-3 -> mb-2.5 / text-base -> text-[0.95rem])
   const getOptionStyle = (index) => {
     const isSelected = tempSelection === index;
-    const base = "w-full py-5 px-6 rounded-2xl transition-all duration-300 text-base font-bold mb-3 flex items-center justify-center text-center border active:scale-95 ";
+    const base = "w-full py-3.5 px-5 rounded-2xl transition-all duration-300 text-[0.95rem] font-bold mb-2.5 flex items-center justify-center text-center border active:scale-95 ";
     
     if (isSelected) {
       const selectedStyles = [
@@ -223,8 +224,8 @@ const Test = () => {
   return (
     <div className="flex flex-col h-[100dvh] p-6 bg-slate-50/50 overflow-hidden font-sans">
       
-      {/* 상단 헤더 (진행바) */}
-      <div className="flex items-center justify-between mt-4">
+      {/* 상단 헤더 (mt-4 -> mt-2 로 축소) */}
+      <div className="flex items-center justify-between mt-2">
         <div className="flex-1 mr-6 bg-gray-200/50 rounded-full h-1.5 overflow-hidden">
           <div 
             className="bg-blue-600 h-1.5 rounded-full transition-all duration-700 ease-in-out shadow-[0_0_10px_rgba(37,99,235,0.3)]" 
@@ -236,15 +237,15 @@ const Test = () => {
         </div>
       </div>
 
-      {/* 질문 텍스트 (최소 높이 및 하단 여백 보장) */}
-      <div className="flex-1 flex items-center justify-center px-2 mt-4 mb-8 min-h-[120px]">
-        <h2 className="text-2xl font-black text-gray-800 text-center break-keep leading-tight tracking-tight">
+      {/* ✅ 2. 질문 영역 높이 최적화 (텍스트를 text-2xl -> text-xl로 줄이고 상하 여백 대폭 축소) */}
+      <div className="flex-1 flex items-center justify-center px-2 mt-2 mb-4 min-h-[80px]">
+        <h2 className="text-xl font-black text-gray-800 text-center break-keep leading-tight tracking-tight">
           {currentQuestion.title}
         </h2>
       </div>
 
-      {/* 선택지 영역 (오버플로우 시 스크롤) */}
-      <div className="flex flex-col gap-1 px-2 overflow-y-auto pb-2">
+      {/* ✅ 3. 스크롤 제거 및 컨테이너 여백 축소 */}
+      <div className="flex flex-col px-2">
         {currentQuestion.options.map((option, index) => (
           <button
             key={index}
@@ -256,12 +257,12 @@ const Test = () => {
         ))}
       </div>
 
-      {/* 하단 내비게이션 바 (이전/다음 버튼) */}
-      <div className="flex gap-3 pb-4 px-2 mt-8">
+      {/* ✅ 4. 하단 버튼 크기 및 상단 여백 축소 (mt-8 -> mt-5 / py-4 -> py-3.5) */}
+      <div className="flex gap-3 pb-2 px-2 mt-5">
         {currentIndex > 0 && (
           <button 
             onClick={handlePrevClick}
-            className="flex-1 py-4 bg-gray-200 text-gray-500 font-bold rounded-xl active:scale-95 transition-all"
+            className="flex-1 py-3.5 bg-gray-200 text-gray-500 font-bold rounded-xl active:scale-95 transition-all"
           >
             이전
           </button>
@@ -269,7 +270,7 @@ const Test = () => {
         <button 
           onClick={handleNextClick}
           disabled={tempSelection === null}
-          className={`flex-[2] py-4 rounded-xl font-black text-lg transition-all active:scale-95 ${
+          className={`flex-[2] py-3.5 rounded-xl font-black text-lg transition-all active:scale-95 ${
             tempSelection !== null 
               ? "bg-blue-600 text-white shadow-lg shadow-blue-200" 
               : "bg-gray-200 text-gray-400 cursor-default opacity-50"
