@@ -44,7 +44,7 @@ const Home = () => {
       
       {/* 하단 저작권 표시 (선택사항) */}
       <p className="mt-8 text-gray-300 text-[0.65rem] tracking-tighter">
-        © 2026 한양대학교 공과대학 학생회. All rights reserved. <br />made by choisunwoong
+        © 2026 한양대학교 공과대학 학생회. All rights reserved. <br />made by Choi Sunwoong
       </p>
     </div>
   );
